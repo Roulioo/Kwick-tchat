@@ -1,0 +1,54 @@
+<!-- Time selection -->
+<div *ngIf="authService.isAuth" class="form-group">
+    <label for="timeDate">Get users messages according of a time</label>
+    <select class="form-control"
+            id="timeDate"
+            (change)="getUserMessagesFiltred($event.target['value'])">
+        <option [selected]="selectedTime === 6">Last 6 hours</option>
+        <option [selected]="selectedTime === 12">Last 12 hours</option>
+        <option [selected]="selectedTime === 24">Last 24 hours</option>
+        <option [selected]="selectedTime === 0 || !selectedTime">All time</option>
+    </select>
+</div>
+
+<!-- List of users messages -->
+<div *ngIf="authService.isAuth" class="card text-center">
+    <!-- Header -->
+    <h3 class="card-header">List of messages</h3>
+
+    <!-- Body -->
+    <div class="card-body">
+        <div *ngFor="let user of pageOfPagination" class="users">
+            {{user.user_name}}: {{user.content}}
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="card-footer">
+        <jw-pagination [items]="userMessages" (changePage)="onChangePage($event)"></jw-pagination>
+    </div>
+
+    <!-- Users no available -->
+    <div *ngIf="!userMessages || (userMessages && userMessages.length === 0)" class="no-users text-center">No data available ...</div>
+
+    <!-- Refreash users messages -->
+    <button *ngIf="authService.isAuth" class="btn btn-primary submit" (click)="getUserMessages()">Refresh users messages</button>
+</div>
+
+<!-- Message of user -->
+<form *ngIf="authService.isAuth"
+      [formGroup]="messageForm"
+      class="form-group"
+      (ngSubmit)="sendMessage()">
+    <div class="form-group container-message">
+        <input type="message"
+               class="form-control"
+               id="messageInput"
+               formControlName="message"
+               placeholder="Message to send">
+        <button type="submit"
+                class="btn btn-primary submit"
+                [disabled]="messageForm.invalid">Send message
+        </button>
+    </div>
+</form>

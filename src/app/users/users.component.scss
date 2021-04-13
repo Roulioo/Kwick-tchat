@@ -1,0 +1,30 @@
+// card body
+span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .circle {
+        margin-right: 8px;
+        height: 12px;
+        width: 12px;
+        background-color: rgb(87, 238, 57);
+        display: inline-block;
+        border-radius: 14px;
+        -webkit-border-radius: 14px;
+        -moz-border-radius: 14px;
+        -ms-border-radius: 14px;
+        -o-border-radius: 14px;
+    }
+}
+
+// card header
+.card-header {
+    font-size: 20px;
+	font-style: italic;
+}
+
+// users no available
+.no-users {
+    margin-bottom: 10px;
+}

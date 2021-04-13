@@ -1,0 +1,26 @@
+<!-- List of users logged -->
+<div *ngIf="authService.isAuth" class="card text-center m-3">
+    <!-- Header -->
+    <h3 class="card-header">List of users logged</h3>
+
+    <!-- Body -->
+    <div class="card-body">
+        <div *ngFor="let user of pageOfPagination">
+            <span class="span-icon">
+                <i class="circle"></i>
+                {{user}}
+            </span>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="card-footer">
+        <jw-pagination [items]="usersOnline" (changePage)="onChangePage($event)"></jw-pagination>
+    </div>
+
+    <!-- Users no available -->
+    <div *ngIf="!usersOnline || (usersOnline && usersOnline.length === 0)" class="no-users text-center">No data available ...</div>
+
+    <!-- Refreash users online -->
+    <button *ngIf="authService.isAuth" class="btn btn-primary submit" (click)="getUsersOnline()">Refresh users online</button>
+</div>

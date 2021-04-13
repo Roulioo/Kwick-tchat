@@ -1,0 +1,31 @@
+<!-- Navbar -->
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Navbar nav -->
+        <ul class="nav navbar-nav">
+            <li routerLinkActive="active">
+                <a routerLink="home">Home</a>
+            </li>
+            <li *ngIf="!authService.isAuth" routerLinkActive="active">
+                <a routerLink="auth/signup">Create an account</a>
+            </li>
+            <li *ngIf="!authService.isAuth" routerLinkActive="active">
+                <a routerLink="auth/signin">Connection</a>
+            </li>
+            <li *ngIf="authService.isAuth" routerLinkActive="active">
+                <a routerLink="tchat">Tchat</a>
+            </li>
+            <li *ngIf="authService.isAuth" routerLinkActive="active">
+                <a routerLink="users">Users</a>
+            </li>
+            <li *ngIf="authService.isAuth">
+                <a (click)="logout()" style="cursor:pointer">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Time of user connected -->
+<div *ngIf="authService.isAuth" class="user-information text-center">
+    <p>After 1200 seconds of inactivity, you will be disconnected ❗ You are inactive since {{seconds}} second(s).</p>
+</div>

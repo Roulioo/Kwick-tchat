@@ -1,0 +1,29 @@
+// card body
+.users {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+// card header
+.card-header {
+	font-size: 20px;
+	font-style: italic;
+}
+
+// form to send message
+.container-message {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    align-items: center;
+
+    .submit {
+        margin-top: 20px;
+    }
+}
+
+// data not available
+.no-users {
+    margin-bottom: 10px;
+}

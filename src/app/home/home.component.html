@@ -1,0 +1,32 @@
+<div class="main-block">
+
+    <div class="body-content">
+        <!-- Message if user disconnected -->
+        <div *ngIf="!authService.isAuth" class="text-center">Welcome to my tchat online, you must log in to have access to the online tchat</div>
+
+        <!-- Message if user connected -->
+        <div *ngIf="authService.isAuth" class="text-center">Welcome to my tchat online, you are now logged</div>
+
+        <!-- Wireframe -->
+        <div class="wireframe">
+            <p>Wireframe of project</p>
+
+            <div class="images">
+                <img src="../../assets/images/home.png" alt="Home page not active">
+                <img src="../../assets/images/home-active.png" alt="Home page active">
+                <img src="../../assets/images/signin.png" alt="Signin page">
+                <img src="../../assets/images/signup.png" alt="Signup page">
+                <img src="../../assets/images/users-active.png" alt="User page">
+                <img src="../../assets/images/tchat-active.png" alt="Tchat page">
+            </div>
+        </div>
+    </div>
+
+    <!-- Social networks -->
+    <div class="row social-content">
+        <ul class="social-network social-circle">
+        <li><a target="_blank" href="https://github.com/Roulioo" class="icoGithub" title="Github"><i class="fa fa-github"></i></a></li>
+        <li><a target="_blank" href="https://www.linkedin.com/in/julio-pereira-499a15134/" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+        </ul>
+    </div>
+</div>
