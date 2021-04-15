@@ -1,27 +1,25 @@
-# KwickTchat
+# Kwick-tchat
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
+Web application with an authentication system, it allows users to chat with each other and also a list of connected users.
 
-## Development server
+# Technologies
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- Angular
+- Typescript
+- HTML
+- SCSS
+- Bootstrap
 
-## Code scaffolding
+# How to test
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Go to current folder of project in terminal
+2. Run "npm install"
+3. Go to src folder
+4. Run "ng serve"
+5. Server will be launched for me is (http://localhost:4200/)
+6. Go to your url
+7. Enjoy !
 
-## Build
+# Information
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+I can be contacted for any information by email: julioocesarr@outlook.fr
